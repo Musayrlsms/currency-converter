@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+ <%= form_for [:conversion, @mission] do |f| %>
+    <div class="form-row mt-5 ">
+      <div class="col-md-4 mb-3 mx-auto">
+        <%= f.label :currency1, "Currency1", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :currency1, class: "form-control is-valid", id:"validationTextarea" %>
+        </div>
+
+        <%= f.label :currency2, "Currency2", class: "col-md-4 control-label" %>
+        <div class="col-md-8">
+          <%= f.text_field :currency2, class: "form-control is-valid mb-3" %>
+        </div>
+
+        <div class="ml-3">
+          <%= f.submit "Convert", class: "btn btn-default btn-primary" %>
+        </div>  
+      </div>
+    </div>
+
+ <% end %>
+ 

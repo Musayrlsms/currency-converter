@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<h1>Home</h1>
+<table border="1", class="table table-striped mt-2">
+  <tr>
+    <td>Currency1</td>
+    <td>Currency2</td>
+    <td>Rate</td>
+    <td></td>
+  </tr>
+  <tr>
+    <% @mission.each do |m| %>
+      <td> <%= m.currency1 %> </td>
+      <td> <%= m.currency2 %> </td>
+      <td> <%= m.rate %> </td>
+      <td> <%= button_to "Destroy", {action: "destroy", id: m.id}, method: :delete, class:"btn btn-outline-danger", data: { confirm: "Are you sure?" } %> </td>    
+  </tr> 
+  <%end%>
+  <%=link_to "Save New Rate",new_conversion_mission_path%>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script>
+    function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+  </script> 
+  
